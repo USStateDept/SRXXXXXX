@@ -1,0 +1,21 @@
+<schema targetNamespace="http://www.example.org/better" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/better" xmlns:maven="http://maven.apache.org/POM/4.0.0" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+	<import schemaLocation="imported/maven-4.0.0.xsd" namespace="http://maven.apache.org/POM/4.0.0">
+	</import>
+	<import schemaLocation="imported/xhtml1-strict.xsd" namespace="http://www.w3.org/1999/xhtml"/>
+
+	<element name="PomCollection" type="tns:PomCollectionType"/>
+
+	<complexType name="PomCollectionType">
+		<sequence>
+			<element ref="maven:project" maxOccurs="unbounded" minOccurs="1"/>
+		</sequence>
+	</complexType>
+
+	<element name="Report" type="tns:ReportType"/>
+
+	<complexType name="ReportType">
+		<sequence>
+			<element ref="xhtml:table"/>
+		</sequence>
+	</complexType>
+</schema>
